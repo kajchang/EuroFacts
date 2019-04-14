@@ -8,7 +8,7 @@ import Wars from '../data/wars.json';
 
 const IndexPage = () => (
     <Layout>
-        <LinkDisplay data={ Wars } path={ 'wars' }/>
+        <LinkDisplay data={ Wars } path={ '/wars' }/>
     </Layout>
 );
 
