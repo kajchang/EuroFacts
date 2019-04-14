@@ -1,38 +1,73 @@
 [
-  {
-    "name": "War of Austrian Succession"
-  },
-  {
-    "name": "War of Spanish Succession"
-  },
-  {
-    "name": "Seven Years' War"
-  },
-  {
-    "name": "Thirty Years' War"
-  },
-  {
-    "name": "Habsburg-Valois Wars"
-  },
-  {
-    "name": "Great Northern War"
-  },
-  {
-    "name": "Swiss Religious Wars"
-  },
-  {
-    "name": "German Peasants' War"
-  },
-  {
-    "name": "German Religious Wars"
-  },
-  {
-    "name": "Eighty Years' War"
-  },
-  {
-    "name": "English Civil War"
-  },
-  {
-    "name": "French Revolutionary Wars"
-  }
+    {
+        "name": "Seven Years' War",
+        "start": 1754,
+        "end": 1763,
+        "participants": [
+            [
+                "Great Britain"
+            ],
+            [
+                "France"
+            ],
+            [
+                "Austria",
+                "Russia",
+                "France"
+            ],
+            [
+                "Prussia"
+            ]
+        ],
+        "desc": "Maria Theresa forms alliance with France and Russia to retake Silesia. New World conflicts between France and Great Britain."
+    },
+    {
+        "name": "Thirty Years' War",
+        "start": 1618,
+        "end": 1648,
+        "participants": [
+            [
+                "Holy Roman Empire"
+            ],
+            [
+                "Bohemia",
+                "Denmark",
+                "Sweden",
+                "France"
+            ]
+        ],
+        "desc": "Series of religious and political conflicts between Catholic and Protestants and Bourbons and Habsburgs."
+    },
+    {
+        "name": "War of Austrian Succession",
+        "start": 1740,
+        "end": 1748,
+        "participants": [
+            [
+                "Austria"
+            ],
+            [
+                "Prussia"
+            ]
+        ],
+        "desc": "Frederick II invades the province of Austrian province of Silesia."
+    },
+    {
+        "name": "War of Spanish Succession",
+        "start": 1701,
+        "end": 1713,
+        "participants": [
+            [
+                "Britain",
+                "Netherlands",
+                "Austria",
+                "Prussia"
+            ],
+            [
+                "Spain",
+                "France"
+            ]
+        ],
+        "desc": "The Grand Alliance fights Spain and France to prevent the unification of the Spanish and French crowns."
+    }
 ]

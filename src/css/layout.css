@@ -18,6 +18,12 @@ body, html, #___gatsby, div[role=group], .container-fluid {
     padding: 25px;
 }
 
-.nav, .nav > .nav-item > h1 > a, .nav > .nav-item > a {
+.nav, .nav > .nav-item > h1 > a, .nav > .nav-item > a, .nav > a {
     color: white;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

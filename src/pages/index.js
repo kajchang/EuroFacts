@@ -9,8 +9,8 @@ import '../css/index.css';
 const IndexPage = () => (
     <Layout>
         {
-            dataSources.map(source =>
-                <LinkDisplay { ...source }/>
+            dataSources.map((source, idx) =>
+                <LinkDisplay key={ idx } { ...source }/>
             )
         }
     </Layout>

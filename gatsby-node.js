@@ -8,20 +8,23 @@ exports.createPages = ({ actions }) => {
 
     const { createPage } = actions;
 
-    dataSources.forEach(({ data, path, component }) => {
+    dataSources.forEach(({ data, pathname, component, previewComponent }) => {
         createPage({
-            path,
+            path: pathname,
             component: resolve('src/components/LinkSearch.js'),
             context: {
                 data,
-                path_: 'wars'
+                pathname,
+                previewComponent
             }
         });
 
         data.forEach(entry => createPage({
-            path: join(path, slugify(entry.name, { lower: true })),
+            path: join(pathname, slugify(entry.name, { lower: true })),
             component,
             context: entry
         }));
     });
 }
+
+exports.createPages({actions: {createPage: () => {}}});
