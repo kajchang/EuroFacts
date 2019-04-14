@@ -9,18 +9,15 @@ import '../css/layout.css';
 const Layout = ({ children }) => (
     <Fragment>
         <Nav className='bg-dark'>
-            <NavItem>
-                <NavItem style={ { padding: 10 }}>
-                    <h2><Link to='/'>EuroFacts</Link>
-                        {
-                            globalHistory.location.pathname.replace('EuroFacts/', '') !== '/' ? globalHistory.location.pathname.replace('EuroFacts/', '').split('/')
-                                .map((path, idx, array) => <Link key={ idx } to={ array.slice(0, idx + 1).join('/') }>{ path.replace(/-/g, ' ')
-                                    .split(' ')
-                                    .map(word => word.charAt(0).toUpperCase().concat(word.slice(1))).join(' ') } </Link>)
-                                .reduce((prev, cur) => [prev, ' > ', cur]) : null
-                        }
-                    </h2>
-                </NavItem>
+            <NavItem style={ { padding: 30 }}>
+                <h1 style={ { display: 'inline' }}><Link to='/' style={ { fontFamily: 'scriptina' } }>Louis</Link></h1>
+                {
+                    globalHistory.location.pathname.replace('louis/', '').replace(/\/$/g, '') !== '/' ? globalHistory.location.pathname.replace('louis/', '').replace(/\/$/g, '').split('/')
+                        .map((path, idx, array) => <Link key={ idx } to={ array.slice(0, idx + 1).join('/') }>{ path.replace(/-/g, ' ')
+                            .split(' ')
+                            .map(word => word.charAt(0).toUpperCase().concat(word.slice(1))).join(' ') } </Link>)
+                        .reduce((prev, cur) => [prev, ' > ', cur]) : null
+                }
             </NavItem>
         </Nav>
         <Container fluid={ true } className='bg-light'>

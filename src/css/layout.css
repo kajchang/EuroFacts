@@ -1,3 +1,10 @@
+@font-face {
+    font-family: scriptina;
+    src: url('../fonts/Scriptina Pro.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 a:link, a:visited, a:hover, a:active {
     text-decoration: none;
 }
@@ -10,6 +17,6 @@ body, html, #___gatsby, div[role=group], .container-fluid {
     padding: 25px;
 }
 
-.nav, .nav > .nav-item > .nav-item > h2 > a {
+.nav, .nav > .nav-item > h1 > a, .nav > .nav-item > a {
     color: white;
 }
