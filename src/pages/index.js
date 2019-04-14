@@ -1,20 +1,14 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Layout from '../components/Layout';
+import LinkDisplay from '../components/LinkDisplay';
 
-import slugify from 'slugify';
+import '../css/index.css';
+
 import Wars from '../data/wars.json';
 
 const IndexPage = () => (
     <Layout>
-        <h2>Wars</h2>
-        {
-            Wars.map(({ name }) => (
-                <Link to={ `wars/${ slugify(name, { lower: true }) }` }>
-                    <p>{ name }</p>
-                </Link>
-            ))
-        }
+        <LinkDisplay data={ Wars } path={ 'wars' }/>
     </Layout>
 );
 

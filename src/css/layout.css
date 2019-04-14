@@ -1,0 +1,15 @@
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+body, html, #___gatsby, div[role=group], .container-fluid {
+    height: 100%;
+}
+
+.container-fluid {
+    padding: 25px;
+}
+
+.nav, .nav > .nav-item > .nav-item > h2 > a {
+    color: white;
+}
