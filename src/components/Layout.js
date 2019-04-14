@@ -15,7 +15,7 @@ const Layout = ({ children }) => (
                             {({ location }) => (
                                 <h2><Link to='/'>EuroFacts</Link>
                                 {
-                                    location.pathname !== '/' ? location.pathname.split('/')
+                                    location.pathname !== '/EuroFacts/' || location.pathname !== '/' ? location.pathname.split('/')
                                         .map((path, idx, array) => <Link to={ array.slice(0, idx + 1).join('/') }>{ path.replace(/-/g, ' ')
                                             .split(' ')
                                             .map(word => word.charAt(0).toUpperCase().concat(word.slice(1))).join(' ') } </Link>)
