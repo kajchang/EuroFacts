@@ -2,13 +2,17 @@ import React from 'react';
 import Layout from '../components/Layout';
 import LinkDisplay from '../components/LinkDisplay';
 
-import '../css/index.css';
+import dataSources from '../data/sources';
 
-import Wars from '../data/wars.json';
+import '../css/index.css';
 
 const IndexPage = () => (
     <Layout>
-        <LinkDisplay data={ Wars } path={ '/wars' }/>
+        {
+            dataSources.map(source =>
+                <LinkDisplay { ...source }/>
+            )
+        }
     </Layout>
 );
 

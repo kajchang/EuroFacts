@@ -12,7 +12,9 @@ const LinkDisplay = ({ data, numShown, path }) => {
     return (
         <Card>
             <CardBody>
-                <CardTitle><h3>Wars</h3></CardTitle>
+                <CardTitle>
+                    <Link to={ path }><h3>Wars</h3></Link>
+                </CardTitle>
                 {
                     data.slice(0, shown).map(({ name }) => (
                         <Link to={ join(path, slugify(name, { lower: true })) }>
