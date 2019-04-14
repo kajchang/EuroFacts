@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'gatsby'
 
 const Layout = ({ children }) => (
     <div>
-        <h1>EuroFacts</h1>
+        <Link to='/'>
+            <h1>EuroFacts</h1>
+        </Link>
         { children }
     </div>
 );
