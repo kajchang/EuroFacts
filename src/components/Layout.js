@@ -18,22 +18,22 @@ const unslugify = word => word
 // https://stackoverflow.com/a/13819253
 const isMobile = {
     Android: function() {
-        return navigator.userAgent.match(/Android/i);
+        return typeof window !== 'undefined' ? navigator.userAgent.match(/Android/i) : false;
     },
     BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
+        return typeof window !== 'undefined' ? navigator.userAgent.match(/BlackBerry/i) : false;
     },
     iOS: function() {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        return typeof window !== 'undefined' ? navigator.userAgent.match(/iPhone|iPad|iPod/i) : false;
     },
     Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
+        return typeof window !== 'undefined' ? navigator.userAgent.match(/Opera Mini/i) : false;
     },
     Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+        return typeof window !== 'undefined' ? navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i) : false;
     },
     any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        return typeof window !== 'undefined' ? (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()) : false;
     }
 };
 
