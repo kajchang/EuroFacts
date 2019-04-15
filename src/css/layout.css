@@ -10,12 +10,16 @@ a:link, a:visited, a:hover, a:active {
     color: black;
 }
 
-body, html, #___gatsby, div[role=group], .container-fluid {
+body, html, #___gatsby, div[role=group] {
     height: 100%;
 }
 
 .container-fluid {
+    position: relative;
     padding: 25px;
+    height: calc(100% - 64px);
+    margin-bottom: 64px;
+    overflow: auto;
 }
 
 .nav, .nav > .nav-item > h1 > a, .nav > .nav-item > a, .nav > a {

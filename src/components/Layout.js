@@ -30,6 +30,7 @@ const Layout = ({ children }) => (
         </Nav>
         <Container fluid={ true } className='bg-light'>
             { children }
+            <div className='ghost'/>
         </Container>
         <Nav className='bg-dark footer'>
             <NavLink href='https://github.com/kajchang/louis' style={ { paddingTop: 20, paddingBottom: 20 } } title='Github'>
