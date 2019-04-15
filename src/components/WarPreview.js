@@ -18,9 +18,9 @@ const WarPreview = ({ data, size }) => {
                 {
                     participants
                         .map(group => group.map((participant, idx) =>
-                            <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } style={ { paddingRight: 2.5 } } />
+                            <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } className='spaced-icon'/>
                         ))
-                        .reduce((prev, curr) => [prev, <img src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' style={ { paddingRight: 2.5 } } />, curr])
+                        .reduce((prev, curr) => [prev, <img src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' className='spaced-icon'/>, curr])
                 }
             </span>;
             break;
@@ -30,9 +30,9 @@ const WarPreview = ({ data, size }) => {
                 {
                     participants
                         .map(group => group.map((participant, idx) =>
-                            <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } style={ { paddingRight: 2.5 } } />
+                            <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } className='spaced-icon'/>
                         ))
-                        .reduce((prev, curr) => [prev, <img src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' style={ { paddingRight: 2.5 } } />, curr])
+                        .reduce((prev, curr) => [prev, <img src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords'className='spaced-icon'/>, curr])
                 }
                 <span style={ { display: 'block', fontSize: 12.5 } }>{ desc }</span>
             </span>;
@@ -43,7 +43,7 @@ const WarPreview = ({ data, size }) => {
     }
 
     return (
-        <Link to={ join('/', 'wars', slugify(name, { lower: true })) }>
+        <Link to={ join('/', 'wars', slugify(name, { lower: true })) } title={ name }>
             { Preview }
         </Link>
     );

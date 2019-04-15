@@ -12,7 +12,7 @@ const LinkDisplay = ({ data, numShown, pathname, previewComponent }) => {
         <Card>
             <CardBody>
                 <CardTitle>
-                    <Link to={ '/'.concat(pathname) }>
+                    <Link to={ '/'.concat(pathname) } title={ pathname.charAt(0).toUpperCase().concat(pathname.slice(1)) }>
                         <h3>{ pathname.charAt(0).toUpperCase().concat(pathname.slice(1)) }</h3>
                     </Link>
                 </CardTitle>

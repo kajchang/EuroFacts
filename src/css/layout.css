@@ -27,3 +27,7 @@ body, html, #___gatsby, div[role=group], .container-fluid {
     bottom: 0;
     width: 100%;
 }
+
+img.spaced-icon {
+    padding-right: 2.5px;
+}
