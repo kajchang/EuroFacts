@@ -18,7 +18,7 @@ const LinkDisplay = ({ data, numShown, pathname, previewComponent }) => {
                 </CardTitle>
                 {
                     data.slice(0, shown).map((data, idx) => (
-                        <PreviewComponent key={ idx } data={ data } size='tiny'/>
+                        <PreviewComponent key={idx} data={data} size='tiny'/>
                     ))
                 }
                 {

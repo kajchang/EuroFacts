@@ -1,11 +1,9 @@
-const { resolve } = require('path');
-
 const dataSources = [
     {
         data: require('./wars.json'),
         pathname: 'wars',
-        component: resolve('src/components/War.js'),
-        previewComponent: 'WarPreview'
+        component: 'War.js',
+        previewComponent: 'WarPreview.js'
     }
 ]
 

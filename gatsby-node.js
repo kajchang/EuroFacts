@@ -19,7 +19,7 @@ exports.createPages = ({ actions }) => {
 
         data.forEach(entry => createPage({
             path: join(pathname, slugify(entry.name, { lower: true })),
-            component,
+            component: resolve(join('src', 'components', component)),
             context: entry
         }));
     });

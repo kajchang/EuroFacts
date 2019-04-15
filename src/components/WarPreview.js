@@ -9,6 +9,7 @@ const WarPreview = ({ data, size }) => {
     const { name, start, end, participants, desc } = data;
 
     let Preview;
+    let flagIdx = 0;
 
     switch (size) {
         case 'tiny':
@@ -20,7 +21,7 @@ const WarPreview = ({ data, size }) => {
                         .map(group => group.map((participant, idx) =>
                             <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } className='spaced-icon'/>
                         ))
-                        .reduce((prev, curr) => [prev, <img src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' className='spaced-icon'/>, curr])
+                        .reduce((prev, curr) => [prev, <img key={ flagIdx++ } src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' className='spaced-icon'/>, curr])
                 }
             </span>;
             break;
@@ -32,7 +33,7 @@ const WarPreview = ({ data, size }) => {
                         .map(group => group.map((participant, idx) =>
                             <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } className='spaced-icon'/>
                         ))
-                        .reduce((prev, curr) => [prev, <img src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords'className='spaced-icon'/>, curr])
+                        .reduce((prev, curr) => [prev, <img key={ flagIdx++ } src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords'className='spaced-icon'/>, curr])
                 }
                 <span style={ { display: 'block', fontSize: 12.5 } }>{ desc }</span>
             </span>;
