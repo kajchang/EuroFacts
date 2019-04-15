@@ -22,7 +22,7 @@ body, html, #___gatsby, div[role=group] {
     overflow: auto;
 }
 
-.nav, .nav > .nav-item > h1 > a, .nav > .nav-item span > a {
+.nav, .nav > .nav-item > h1 > a, .nav > .nav-item > p > a, .nav > a {
     color: white;
 }
 

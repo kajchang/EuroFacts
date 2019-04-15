@@ -4,8 +4,6 @@ import LinkDisplay from '../components/LinkDisplay';
 
 import dataSources from '../data/sources';
 
-import '../css/index.css';
-
 const IndexPage = () => (
     <Layout>
         {
