@@ -24,7 +24,7 @@ const LinkSearch = ({ pageContext }) => {
                             .slice(0, 10)
                             .map((data , idx) => <Link to={ join('/', pathname, slugify(data.name, { lower: true })) }>
                                 <ListGroupItem key={ idx }>
-                                    <PreviewComponent data={ data } size='tiny'/>
+                                    <PreviewComponent data={ data } size='medium'/>
                                 </ListGroupItem>
                             </Link>)
                     }

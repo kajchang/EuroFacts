@@ -34,3 +34,12 @@ fs.readdirSync('src/images/flags').forEach(flag => {
         .png()
         .toFile(path.join('src/images/flags', flag.replace(/\..+/, '.png')), (err, info) => {});
 });
+
+fs.readdirSync('src/images/icons').forEach(icon => {
+    const buffer = fs.readFileSync(path.join('src/images/icons', icon));
+    fs.unlinkSync(path.join('src/images/icons', icon));
+    sharp(buffer)
+        .resize(15, 15)
+        .png()
+        .toFile(path.join('src/images/icons', icon.replace(/\..+/, '.png')), (err, info) => {});
+});

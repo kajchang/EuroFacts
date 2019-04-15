@@ -3,8 +3,12 @@ import { Link } from 'gatsby';
 import { Container, Nav, NavItem, NavLink } from 'reactstrap';
 import { globalHistory } from '@reach/router';
 
+import { pathPrefix } from '../../gatsby-config';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/layout.css';
+
+const getTruePath = () => globalHistory.location.pathname.replace(pathPrefix, '');
 
 const Layout = ({ children }) => (
     <Fragment>
@@ -12,7 +16,7 @@ const Layout = ({ children }) => (
             <NavItem>
                 <h1 style={ { display: 'inline' }}><Link to='/' style={ { fontFamily: 'scriptina' } }>Louis</Link></h1>
                 {
-                    globalHistory.location.pathname.replace('louis/', '').replace(/\/$/g, '') !== '/' ? globalHistory.location.pathname.replace('louis/', '').replace(/\/$/g, '').split('/')
+                    getTruePath() !== '/' ? getTruePath().replace(/\/$/g, '').split('/')
                         .map((path, idx, array) => <Link key={ idx } to={ '/'.concat(array.slice(0, idx + 1).join('/')) }>{ path
                             .split('-')
                             .map(word => word.charAt(0).toUpperCase().concat(word.slice(1)))
@@ -25,7 +29,7 @@ const Layout = ({ children }) => (
             { children }
         </Container>
         <Nav className='bg-dark footer'>
-            <NavLink href='https://github.com/kajchang/louis'>
+            <NavLink href='https://github.com/kajchang/louis' style={ { paddingTop: 20, paddingBottom: 20 } }>
                 Source
             </NavLink>
         </Nav>

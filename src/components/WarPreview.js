@@ -16,14 +16,29 @@ const WarPreview = ({ data, size }) => {
                 { name } <span style={ { fontSize: 10 } }>({ start }-{ end })</span>
                 <br/>
                 {
-                    participants.map(group => group.map((participant, idx) =>
-                        <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } />
-                    ))
+                    participants
+                        .map(group => group.map((participant, idx) =>
+                            <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } style={ { paddingRight: 2.5 } } />
+                        ))
+                        .reduce((prev, curr) => [prev, <img src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' style={ { paddingRight: 2.5 } } />, curr])
                 }
             </span>;
             break;
         case 'medium':
-            Preview = <span>Hi</span>;
+            Preview = <span style={ { display: 'block' } }>
+                { name } <span style={ { fontSize: 10, paddingRight: 5 } }>({ start }-{ end })</span>
+                {
+                    participants
+                        .map(group => group.map((participant, idx) =>
+                            <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } style={ { paddingRight: 2.5 } } />
+                        ))
+                        .reduce((prev, curr) => [prev, <img src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' style={ { paddingRight: 2.5 } } />, curr])
+                }
+                <span style={ { display: 'block', fontSize: 12.5 } }>{ desc }</span>
+            </span>;
+            break;
+        default:
+            Preview = <span>Choose a valid size option: tiny or medium</span>;
             break;
     }
 
