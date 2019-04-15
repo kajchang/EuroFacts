@@ -16,7 +16,7 @@ const LinkSearch = ({ pageContext }) => {
     return (
         <Layout>
             <div>
-                <Input placeholder={ `Search ${ pathname.charAt(0).toUpperCase().concat(pathname.slice(1)) }...` } type='text' value={ search } onChange={ event => setSearch(event.target.value) } style={ { fontSize: 20, marginBottom: 10, padding: 20 } }/>
+                <Input placeholder={ `Search ${ pathname.charAt(1).toUpperCase().concat(pathname.slice(2)) }...` } type='text' value={ search } onChange={ event => setSearch(event.target.value) } style={ { fontSize: 20, marginBottom: 10, padding: 20 } }/>
                 <ListGroup>
                     {
                         data

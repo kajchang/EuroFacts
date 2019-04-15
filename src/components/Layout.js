@@ -18,14 +18,17 @@ const Layout = ({ children }) => (
     <Fragment>
         <Nav className='bg-dark' style={ { padding: 30 }}>
             <NavItem>
-                <h1 style={ { display: 'inline' }}><Link to='/' style={ { fontFamily: 'scriptina' } } title='Louis'>Louis</Link></h1>
-                {
-                    getTruePath() !== '/' ? getTruePath().replace(/\/$/g, '').split('/')
-                        .map((path, idx, array) => <Link key={ idx } to={ '/'.concat(array.slice(0, idx + 1).join('/')) } title={ unslugify(path) }>
-                            { unslugify(path) }
-                        </Link>)
-                        .reduce((prev, cur) => [prev, ' > ', cur]) : null
-                }
+                <img src={ require('../images/media/Europe.png') } alt='Europe' title='Europe' height='50'/>
+                <h1 style={ { display: 'inline', verticalAlign: 'middle' }}><Link to='/' style={ { fontFamily: 'scriptina' } } title='Louis'>Louis</Link></h1>
+                <span style={ { verticalAlign: 'middle', paddingTop: 7.5 } }>
+                    {
+                        getTruePath() !== '/' ? getTruePath().replace(/\/$/g, '').split('/')
+                            .map((path, idx, array) => <Link key={ idx } to={ '/'.concat(array.slice(0, idx + 1).join('/')) } title={ unslugify(path) }>
+                                { unslugify(path) }
+                            </Link>)
+                            .reduce((prev, cur) => [prev, ' > ', cur]) : null
+                    }
+                </span>
             </NavItem>
         </Nav>
         <Container fluid={ true } className='bg-light'>
