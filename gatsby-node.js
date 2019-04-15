@@ -4,8 +4,6 @@ const slugify = require('slugify');
 const dataSources = require('./src/data/sources');
 
 exports.createPages = ({ actions }) => {
-    console.log(dataSources);
-
     const { createPage } = actions;
 
     dataSources.forEach(({ data, pathname, component, previewComponent }) => {
@@ -27,4 +25,4 @@ exports.createPages = ({ actions }) => {
     });
 }
 
-exports.createPages({actions: {createPage: () => {}}});
+// exports.createPages({actions: {createPage: () => {}}});
