@@ -35,7 +35,7 @@ LinkDisplay.propTypes = {
     })),
     numShown: PropTypes.number,
     pathname: PropTypes.string.isRequired,
-    previewComponent: PropTypes.func.isRequired
+    previewComponent: PropTypes.string.isRequired
 };
 
 export default LinkDisplay;

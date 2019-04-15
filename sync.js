@@ -1,4 +1,8 @@
 const fs = require('fs');
+const path = require('path');
+
+const stringify = require('json-stringify-pretty-compact');
+const sharp = require('sharp');
 
 // https://ourcodeworld.com/articles/read/764/how-to-sort-alphabetically-an-array-of-objects-by-key-in-javascript
 function dynamicSort(property) {
@@ -18,9 +22,15 @@ function dynamicSort(property) {
     }
 }
 
-fs.writeFileSync('src/data/wars.json', JSON.stringify(
+fs.writeFileSync('src/data/wars.json', stringify(
     JSON.parse(fs.readFileSync('src/data/wars.json', 'utf8')).sort(dynamicSort('name')),
-    null,
-    4)
-);
+));
 
+fs.readdirSync('src/images/flags').forEach(flag => {
+    const buffer = fs.readFileSync(path.join('src/images/flags', flag));
+    fs.unlinkSync(path.join('src/images/flags', flag));
+    sharp(buffer)
+        .resize(25, 15)
+        .png()
+        .toFile(path.join('src/images/flags', flag.replace(/\..+/, '.png')), (err, info) => {});
+});

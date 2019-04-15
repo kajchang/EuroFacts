@@ -12,14 +12,26 @@ const WarPreview = ({ data, size }) => {
 
     switch (size) {
         case 'tiny':
-            Preview = <span style={ { display: 'block' } }>{ name }</span>;
+            Preview = <span style={ { display: 'block' } }>
+                { name } <span style={ { fontSize: 10 } }>({ start }-{ end })</span>
+                <br/>
+                {
+                    participants.map(group => group.map((participant, idx) =>
+                        <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } />
+                    ))
+                }
+            </span>;
+            break;
+        case 'medium':
+            Preview = <span>Hi</span>;
+            break;
     }
 
     return (
         <Link to={ join('/', 'wars', slugify(name, { lower: true })) }>
             { Preview }
         </Link>
-    )
+    );
 }
 
 WarPreview.propTypes = {
