@@ -31,3 +31,9 @@ body, html, #___gatsby, div[role=group], .container-fluid {
 img.spaced-icon {
     padding-right: 2.5px;
 }
+
+.card {
+    position: relative;
+    float: left;
+    padding: 10px;
+}

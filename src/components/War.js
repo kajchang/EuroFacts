@@ -8,7 +8,7 @@ const War = ({ pageContext }) => {
 
     return (
         <Layout>
-            <Card style={ { position: 'relative', float: 'left', padding: 10 } }>
+            <Card style={ { maxWidth: 400 } }>
                 <CardBody>
                     <CardTitle>
                         <h3>{ name }</h3>
