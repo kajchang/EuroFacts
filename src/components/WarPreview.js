@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Flag from './Flag';
+import TextParser from './TextParser';
 
 import { join } from 'path';
 import slugify from 'slugify';
@@ -13,7 +14,13 @@ const WarPreview = ({ data, size }) => {
     let dividerIdx = 0;
 
     switch (size) {
-        case 'tiny':
+        case 'inline':
+            Preview = <span style={ { display: 'block' } }>
+                <img key={ dividerIdx++ } src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' className='spaced-icon'/>
+                { name } <span style={ { fontSize: 10 } }>({ start }-{ end })</span>
+            </span>;
+            break;
+        case 'small':
             Preview = <span style={ { display: 'block' } }>
                 { name } <span style={ { fontSize: 10 } }>({ start }-{ end })</span>
                 <br/>
@@ -36,11 +43,13 @@ const WarPreview = ({ data, size }) => {
                         ))
                         .reduce((prev, curr) => [prev, <img key={ dividerIdx++ } src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords'className='spaced-icon'/>, curr])
                 }
-                <span style={ { display: 'block', fontSize: 12.5 } }>{ desc }</span>
+                <span style={ { display: 'block', fontSize: 12.5 } }>
+                    <TextParser text={ desc }/>
+                </span>
             </span>;
             break;
         default:
-            Preview = <span>Choose a valid size option: 'tiny' or 'medium'</span>;
+            Preview = <span>Choose a valid size option: 'inline', 'small' or 'medium'</span>;
             break;
     }
 

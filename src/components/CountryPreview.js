@@ -12,7 +12,12 @@ const CountryPreview = ({ data, size }) => {
     let Preview;
 
     switch (size) {
-        case 'tiny':
+        case 'inline':
+            Preview = <span>
+                <Flag countryName={ name }/> { name }
+            </span>;
+            break;
+        case 'small':
             Preview = <span style={ { display: 'block' } }>
                 <Flag countryName={ name }/> { name }
             </span>;
@@ -23,7 +28,7 @@ const CountryPreview = ({ data, size }) => {
             </span>;
             break;
         default:
-            Preview = <span>Choose a valid size option: 'tiny' or 'medium'</span>;
+            Preview = <span>Choose a valid size option: 'inline', 'small' or 'medium'</span>;
             break;
     }
 

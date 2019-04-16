@@ -20,9 +20,9 @@ The usage of the data sources is defined in `src/data/sources.js`:
 const dataSources = [
     {
         data: require('./wars.json'),
-        pathname: 'wars',
-        component: resolve('src/components/War.js'),
-        previewComponent: 'WarPreview'
+        pathname: '/wars',
+        component: 'War.js',
+        previewComponent: 'WarPreview.js'
     }
 ]
 ```
@@ -37,6 +37,10 @@ const dataSources = [
 
 #### Helper Files
 
-`sync.js` is a helper file that you should run after adding assets. It will sort the json data in `src/data` and resize and reformat the images in `images/flags` and `images/icons`.
+`sync.js` is a helper file that you should run after adding assets. It will sort the json data in `src/data` and resize and reformat the images in `images/flags` and `images/icons`. It also compiles a list of countries from other data sources.
 
 `publish.js` is a shortcut to push to github pages without having to go through a Travis build.
+
+### Text Formatting
+
+Text in descriptions and in the future other fields is run through a parser located in `src/components/TextParser` that transforms calls like `Country(Great Britain)` into a link and preview to the corresponding page.

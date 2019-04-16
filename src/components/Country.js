@@ -19,7 +19,7 @@ const Country = ({ pageContext }) => {
                         {
                             require('../data/wars')
                                 .filter(({ participants }) => participants.some(group => group.includes(name)))
-                                .map(war => <WarPreview data={ war } size='tiny'/>
+                                .map(war => <WarPreview data={ war } size='small'/>
                             )
                         }
                     </CardText>

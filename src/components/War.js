@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardTitle, CardBody, Row, Col, CardText } from 'reactstrap';
 import Layout from './Layout';
 import CountryPreview from './CountryPreview';
+import TextParser from './TextParser';
 
 const War = ({ pageContext }) => {
     const { name, start, end, participants, desc } = pageContext;
@@ -20,7 +21,7 @@ const War = ({ pageContext }) => {
                                 .map(group => <Col>
                                     {
                                         group.map((participant, idx) => <span style={ { display: 'block', paddingBottom: 5 } }>
-                                            <CountryPreview key={ idx } data={ { name: participant } } size='tiny'/>
+                                            <CountryPreview key={ idx } data={ { name: participant } } size='small'/>
                                         </span>)
                                     }
                                 </Col>)
@@ -29,7 +30,9 @@ const War = ({ pageContext }) => {
                                 </Col>, cur])
                         }
                     </Row>
-                    <CardText>{ desc }</CardText>
+                    <CardText>
+                        <TextParser text={ desc }/>
+                    </CardText>
                 </CardBody>
             </Card>
         </Layout>

@@ -7,7 +7,7 @@
       ["Austria", "Russia", "France"],
       ["Prussia", "Great Britain"]
     ],
-    "desc": "Maria Theresa forms an alliance with France and Russia to retake Silesia. New World conflicts between France and Great Britain."
+    "desc": "Maria Theresa forms an alliance with Country(France) and Country(Russia) to retake Silesia. New World conflicts between Country(France) and Country(Great Britain)."
   },
   {
     "name": "Thirty Years' War",
@@ -24,7 +24,7 @@
     "start": 1740,
     "end": 1748,
     "participants": [["Austria"], ["Prussia"]],
-    "desc": "Frederick II invades the Austrian province of Silesia."
+    "desc": "Frederick II invades the Country(Austria)n province of Silesia."
   },
   {
     "name": "War of Spanish Succession",
@@ -34,6 +34,6 @@
       ["Great Britain", "Netherlands", "Austria", "Prussia"],
       ["Spain", "France"]
     ],
-    "desc": "The Grand Alliance fights Spain and France to prevent the unification of the Spanish and French crowns."
+    "desc": "The Grand Alliance fights Country(Spain) and Country(France) to prevent the unification of the Spanish and French crowns."
   }
 ]
