@@ -1,8 +1,9 @@
 import React from 'react';
 import Layout from './Layout'
-import { Card, CardBody, CardTitle } from 'reactstrap'
+import { Card, CardBody, CardTitle, CardText } from 'reactstrap'
 import WarPreview from './WarPreview';
-import CardText from 'reactstrap/es/CardText'
+
+import { getDataSource } from '../data/sources';
 
 const Country = ({ pageContext }) => {
     const { name } = pageContext;
@@ -17,7 +18,8 @@ const Country = ({ pageContext }) => {
                     <CardText>
                         <h4>Wars</h4>
                         {
-                            require('../data/wars')
+                            getDataSource('War')
+                                .data
                                 .filter(({ participants }) => participants.some(group => group.includes(name)))
                                 .map(war => <WarPreview data={ war } size='small'/>
                             )

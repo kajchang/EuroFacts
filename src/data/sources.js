@@ -1,16 +1,18 @@
-const dataSources = [
-    {
-        data: require('./wars.json'),
-        pathname: '/wars',
-        component: 'War.js',
-        previewComponent: 'WarPreview.js'
-    },
-    {
-        data: require('./countries'),
-        pathname: '/countries',
-        component: 'Country.js',
-        previewComponent: 'CountryPreview.js'
-    }
-]
+const DataSource = (data, resourceName, pathname) => {
+    return Object.freeze({
+        data,
+        resourceName,
+        pathname,
+        component: `${ resourceName }.js`,
+        previewComponent: `${ resourceName }Preview.js`
+    });
+}
 
-module.exports = dataSources;
+const dataSources = [
+    DataSource(require('./wars.json'), 'War', '/wars'),
+    DataSource(require('./countries.json'), 'Country', '/countries')
+];
+
+exports.sources = dataSources;
+
+exports.getDataSource = resourceName => dataSources.find(source => source.resourceName === resourceName);

@@ -1,12 +1,12 @@
 const { resolve, join } = require('path');
 const slugify = require('slugify');
 
-const dataSources = require('./src/data/sources');
+const { sources } = require('./src/data/sources');
 
 exports.createPages = ({ actions }) => {
     const { createPage } = actions;
 
-    dataSources.forEach(({ data, pathname, component, previewComponent }) => {
+    sources.forEach(({ data, pathname, component, previewComponent }) => {
         createPage({
             path: pathname,
             component: resolve('src/components/LinkSearch.js'),
