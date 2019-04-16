@@ -17,23 +17,29 @@ The wiki is built from `.json` files located in `src/data`.
 The usage of the data sources is defined in `src/data/sources.js`:
 
 ```js
+const DataSource = (data, resourceName, pathname) => {
+    return Object.freeze({
+        data,
+        resourceName,
+        pathname,
+        component: `${ resourceName }Page.js`,
+        previewComponent: `${ resourceName }Preview.js`
+    });
+}
+
 const dataSources = [
-    {
-        data: require('./wars.json'),
-        pathname: '/wars',
-        component: 'War.js',
-        previewComponent: 'WarPreview.js'
-    }
-]
+    DataSource(require('./wars.json'), 'War', '/wars'),
+    DataSource(require('./countries.json'), 'Country', '/countries')
+];
 ```
 
 `data` is the raw json data.
 
+`resourceName` is the display name for the data.
+
 `pathname` is the path under which the pages are created.
 
-`component` is the path to the component for the page.
-
-`previewComponent` is a component for displaying a preview of the page's data in searches or on the index.
+`component` and `previewComponent` are derived from `resourceName` and map to the corresponding components for the pages.
 
 #### Helper Files
 
@@ -43,4 +49,4 @@ const dataSources = [
 
 ### Text Formatting
 
-Text in descriptions and in the future other fields is run through a parser located in `src/components/TextParser` that transforms calls like `Country(Great Britain)` into a link and preview to the corresponding page.
+Text in descriptions and in the future other fields is run through a parser located in `src/components/TextParser` that transforms calls like `CountryPage(Great Britain)` into a link and preview to the corresponding page.

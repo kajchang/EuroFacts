@@ -3,7 +3,7 @@ const DataSource = (data, resourceName, pathname) => {
         data,
         resourceName,
         pathname,
-        component: `${ resourceName }.js`,
+        component: `${ resourceName }Page.js`,
         previewComponent: `${ resourceName }Preview.js`
     });
 }

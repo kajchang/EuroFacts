@@ -5,7 +5,7 @@ import WarPreview from './WarPreview';
 
 import { getDataSource } from '../data/sources';
 
-const Country = ({ pageContext }) => {
+const CountryPage = ({ pageContext }) => {
     const { name } = pageContext;
 
     return (
@@ -18,7 +18,7 @@ const Country = ({ pageContext }) => {
                     <CardText>
                         <h4>Wars</h4>
                         {
-                            getDataSource('War')
+                            getDataSource('WarPage')
                                 .data
                                 .filter(({ participants }) => participants.some(group => group.includes(name)))
                                 .map(war => <WarPreview data={ war } size='small'/>
@@ -31,4 +31,4 @@ const Country = ({ pageContext }) => {
     );
 }
 
-export default Country;
+export default CountryPage;

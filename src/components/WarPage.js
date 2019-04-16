@@ -4,7 +4,7 @@ import Layout from './Layout';
 import CountryPreview from './CountryPreview';
 import TextParser from './TextParser';
 
-const War = ({ pageContext }) => {
+const WarPage = ({ pageContext }) => {
     const { name, start, end, participants, desc } = pageContext;
 
     return (
@@ -39,4 +39,4 @@ const War = ({ pageContext }) => {
     );
 }
 
-export default War;
+export default WarPage;

@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { Card, CardTitle, CardBody, Button } from 'reactstrap';
 
+import { isMobile } from '../utils'
+
 const LinkDisplay = ({ data, numShown, pathname, previewComponent }) => {
     const [shown, setShown] = useState(numShown || 5);
 
     const PreviewComponent = require(`./${ previewComponent }`).default;
 
     return (
-        <Card style={ { marginRight: 10 } }>
+        <Card style={ isMobile() ? { minWidth: '100%', marginTop: 10 }: { marginRight: 10 } }>
             <CardBody>
                 <CardTitle>
                     <Link to={ pathname } title={ pathname.charAt(1).toUpperCase().concat(pathname.slice(2)) }>
