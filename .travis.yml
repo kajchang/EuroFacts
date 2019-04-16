@@ -12,7 +12,7 @@ cache:
     - node_modules
 
 script:
-  - yarn build:prod
+  - yarn build: prod
 
 deploy:
   provider: pages

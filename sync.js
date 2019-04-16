@@ -23,7 +23,7 @@ function dynamicSort(property) {
 }
 
 fs.writeFileSync('src/data/wars.json', stringify(
-    JSON.parse(fs.readFileSync('src/data/wars.json', 'utf8')).sort(dynamicSort('name')),
+    JSON.parse(fs.readFileSync('src/data/wars.json', 'utf8')).sort((a, b) => b.start - a.start),
 ));
 
 fs.writeFileSync('src/data/countries.json', stringify(

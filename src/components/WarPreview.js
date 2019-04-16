@@ -15,7 +15,7 @@ const WarPreview = ({ data, size }) => {
 
     switch (size) {
         case 'inline':
-            Preview = <span style={ { display: 'block' } }>
+            Preview = <span>
                 <img key={ dividerIdx++ } src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' className='spaced-icon'/>
                 { name } <span style={ { fontSize: 10 } }>({ start }-{ end })</span>
             </span>;
