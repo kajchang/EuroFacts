@@ -18,7 +18,7 @@ const CountryPage = ({ pageContext }) => {
                     <CardText>
                         <h4>Wars</h4>
                         {
-                            getDataSource('WarPage')
+                            getDataSource('War')
                                 .data
                                 .filter(({ participants }) => participants.some(group => group.includes(name)))
                                 .map(war => <WarPreview data={ war } size='small'/>
