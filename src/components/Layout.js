@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import { Container, Nav, NavItem, NavLink } from 'reactstrap';
-import { globalHistory } from '@reach/router';
 
+import { globalHistory } from '@reach/router';
 import { pathPrefix } from '../../gatsby-config';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,27 +15,8 @@ const unslugify = word => word
     .join(' ');
 
 
-// https://stackoverflow.com/a/13819253
-const isMobile = {
-    Android: function() {
-        return typeof window !== 'undefined' ? navigator.userAgent.match(/Android/i) : false;
-    },
-    BlackBerry: function() {
-        return typeof window !== 'undefined' ? navigator.userAgent.match(/BlackBerry/i) : false;
-    },
-    iOS: function() {
-        return typeof window !== 'undefined' ? navigator.userAgent.match(/iPhone|iPad|iPod/i) : false;
-    },
-    Opera: function() {
-        return typeof window !== 'undefined' ? navigator.userAgent.match(/Opera Mini/i) : false;
-    },
-    Windows: function() {
-        return typeof window !== 'undefined' ? navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i) : false;
-    },
-    any: function() {
-        return typeof window !== 'undefined' ? (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()) : false;
-    }
-};
+const isMobile = () => typeof window !== 'undefined' ?
+    navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i) : false;
 
 const Layout = ({ children }) => (
     <Fragment>
@@ -58,7 +39,7 @@ const Layout = ({ children }) => (
             { children }
         </Container>
         {
-            !isMobile.any() ? (
+            !isMobile() ? (
                 <Nav className='bg-dark footer'>
                     <NavLink href='https://github.com/kajchang/louis' style={ { paddingTop: 20, paddingBottom: 20 } } title='Github'>
                         Source

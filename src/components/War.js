@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, CardTitle, CardBody, Row, Col } from 'reactstrap';
+import { Card, CardTitle, CardBody, Row, Col, CardText } from 'reactstrap';
 import Layout from './Layout';
-import CardText from 'reactstrap/es/CardText'
+import CountryPreview from './CountryPreview';
 
 const War = ({ pageContext }) => {
     const { name, start, end, participants, desc } = pageContext;
@@ -19,9 +19,8 @@ const War = ({ pageContext }) => {
                             participants
                                 .map(group => <Col>
                                     {
-                                        group.map(participant => <span style={ { display: 'block', paddingBottom: 5 } }>
-                                            <img src={ require(`../images/flags/${ participant }.png`) } alt={ participant } title={ participant } className='spaced-icon'/>
-                                            { participant }
+                                        group.map((participant, idx) => <span style={ { display: 'block', paddingBottom: 5 } }>
+                                            <CountryPreview key={ idx } data={ { name: participant } } size='tiny'/>
                                         </span>)
                                     }
                                 </Col>)

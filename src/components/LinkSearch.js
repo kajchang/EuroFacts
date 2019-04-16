@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import { Input, ListGroup, ListGroupItem } from 'reactstrap';
 import Layout from './Layout';
-
-import { join } from 'path';
-import slugify from 'slugify';
 
 const LinkSearch = ({ pageContext }) => {
     const { data, pathname, previewComponent } = pageContext;
@@ -22,11 +18,11 @@ const LinkSearch = ({ pageContext }) => {
                         data
                             .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))
                             .slice(0, 10)
-                            .map((data , idx) => <Link to={ join('/', pathname, slugify(data.name, { lower: true })) }>
+                            .map((data , idx) =>
                                 <ListGroupItem key={ idx }>
                                     <PreviewComponent data={ data } size='medium'/>
                                 </ListGroupItem>
-                            </Link>)
+                            )
                     }
                 </ListGroup>
             </div>

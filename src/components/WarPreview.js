@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import Flag from './Flag';
 
 import { join } from 'path';
 import slugify from 'slugify';
@@ -9,7 +10,7 @@ const WarPreview = ({ data, size }) => {
     const { name, start, end, participants, desc } = data;
 
     let Preview;
-    let flagIdx = 0;
+    let dividerIdx = 0;
 
     switch (size) {
         case 'tiny':
@@ -19,9 +20,9 @@ const WarPreview = ({ data, size }) => {
                 {
                     participants
                         .map(group => group.map((participant, idx) =>
-                            <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } className='spaced-icon'/>
+                            <Flag key={ idx } countryName={ participant }/>
                         ))
-                        .reduce((prev, curr) => [prev, <img key={ flagIdx++ } src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' className='spaced-icon'/>, curr])
+                        .reduce((prev, curr) => [prev, <img key={ dividerIdx++ } src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' className='spaced-icon'/>, curr])
                 }
             </span>;
             break;
@@ -31,15 +32,15 @@ const WarPreview = ({ data, size }) => {
                 {
                     participants
                         .map(group => group.map((participant, idx) =>
-                            <img key={ idx } src={ require(`../images/flags/${ participant }.png`) } alt={ participant } className='spaced-icon'/>
+                            <Flag key={ idx } countryName={ participant }/>
                         ))
-                        .reduce((prev, curr) => [prev, <img key={ flagIdx++ } src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords'className='spaced-icon'/>, curr])
+                        .reduce((prev, curr) => [prev, <img key={ dividerIdx++ } src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords'className='spaced-icon'/>, curr])
                 }
                 <span style={ { display: 'block', fontSize: 12.5 } }>{ desc }</span>
             </span>;
             break;
         default:
-            Preview = <span>Choose a valid size option: tiny or medium</span>;
+            Preview = <span>Choose a valid size option: 'tiny' or 'medium'</span>;
             break;
     }
 
@@ -57,7 +58,7 @@ WarPreview.propTypes = {
         end: PropTypes.number.isRequired,
         participants: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
         desc: PropTypes.string.isRequired
-    }),
+    }).isRequired,
     size: PropTypes.string.isRequired
 }
 

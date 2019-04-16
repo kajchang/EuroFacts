@@ -9,7 +9,7 @@ const LinkDisplay = ({ data, numShown, pathname, previewComponent }) => {
     const PreviewComponent = require(`./${ previewComponent }`).default;
 
     return (
-        <Card>
+        <Card style={ { marginRight: 10 } }>
             <CardBody>
                 <CardTitle>
                     <Link to={ pathname } title={ pathname.charAt(1).toUpperCase().concat(pathname.slice(2)) }>
@@ -22,7 +22,7 @@ const LinkDisplay = ({ data, numShown, pathname, previewComponent }) => {
                     ))
                 }
                 {
-                    shown < data.length ? <Button onClick={ () => setShown(shown + 5) }>See More</Button> : null
+                    shown < data.length ? <Button size='sm' onClick={ () => setShown(shown + 5) } style={ { marginTop: 10 } } >See More</Button> : null
                 }
             </CardBody>
         </Card>

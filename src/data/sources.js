@@ -4,6 +4,12 @@ const dataSources = [
         pathname: '/wars',
         component: 'War.js',
         previewComponent: 'WarPreview.js'
+    },
+    {
+        data: require('./countries'),
+        pathname: '/countries',
+        component: 'Country.js',
+        previewComponent: 'CountryPreview.js'
     }
 ]
 
