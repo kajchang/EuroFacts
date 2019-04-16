@@ -11,7 +11,7 @@ const LinkDisplay = ({ data, numShown, pathname, previewComponent }) => {
     const PreviewComponent = require(`./${ previewComponent }`).default;
 
     return (
-        <Card style={ isMobile() ? { minWidth: '100%', marginTop: 10 }: { marginRight: 10 } }>
+        <Card style={ isMobile() ? { minWidth: '100%', marginTop: 10 }: { marginRight: 10, marginTop: 10, minWidth: 'calc(33% - 10px)' } }>
             <CardBody>
                 <CardTitle>
                     <Link to={ pathname } title={ pathname.charAt(1).toUpperCase().concat(pathname.slice(2)) }>
