@@ -1,5 +1,26 @@
 [
   {
+    "name": "French Religious Wars",
+    "start": 1572,
+    "end": 1598,
+    "participants": [["France"], ["France"]],
+    "desc": "Civil war between Huguenots and Catholics sparked by the Catholic attack of Henry of Navarre's wedding."
+  },
+  {
+    "name": "German Peasants' War",
+    "start": 1524,
+    "end": 1525,
+    "participants": [["Holy Roman Empire"], ["Holy Roman Empire"]],
+    "desc": "Popular Protestant German peasant uprising."
+  },
+  {
+    "name": "German Religious Wars",
+    "start": 1546,
+    "end": 1555,
+    "participants": [["Holy Roman Empire"], ["Holy Roman Empire"]],
+    "desc": "Civil War between Protestant princes and the Country(Holy Roman Empire)."
+  },
+  {
     "name": "Seven Years' War",
     "start": 1754,
     "end": 1763,
@@ -8,6 +29,30 @@
       ["Prussia", "Great Britain"]
     ],
     "desc": "Maria Theresa forms an alliance with Country(France) and Country(Russia) to retake Silesia. New World conflicts between Country(France) and Country(Great Britain)."
+  },
+  {
+    "name": "Swiss Religious Wars",
+    "start": 1520,
+    "end": 1531,
+    "participants": [["Switzerland"], ["Switzerland"]],
+    "desc": "Civil War between Protestant and Catholic cantons."
+  },
+  {
+    "name": "The Netherlands War of Independence",
+    "start": 1566,
+    "end": 1609,
+    "participants": [["Netherlands"], ["Spain"]],
+    "desc": "Dutch war for independence from Country(Spain)."
+  },
+  {
+    "name": "Thirty Years' War",
+    "start": 1618,
+    "end": 1648,
+    "participants": [
+      ["Holy Roman Empire"],
+      ["Bohemia", "Denmark", "Sweden", "France"]
+    ],
+    "desc": "Series of religious conflicts between Catholic and Protestants and political conflicts between Bourbons and Habsburgs."
   },
   {
     "name": "War of Austrian Succession",
@@ -25,50 +70,5 @@
       ["Spain", "France"]
     ],
     "desc": "The Grand Alliance fights Country(Spain) and Country(France) to prevent the unification of the Spanish and French crowns."
-  },
-  {
-    "name": "Thirty Years' War",
-    "start": 1618,
-    "end": 1648,
-    "participants": [
-      ["Holy Roman Empire"],
-      ["Bohemia", "Denmark", "Sweden", "France"]
-    ],
-    "desc": "Series of religious conflicts between Catholic and Protestants and political conflicts between Bourbons and Habsburgs."
-  },
-  {
-    "name": "French Religious Wars",
-    "start": 1572,
-    "end": 1598,
-    "participants": [["France"], ["France"]],
-    "desc": "Civil war between Huguenots and Catholics sparked by the Catholic attack of Henry of Navarre's wedding."
-  },
-  {
-    "name": "The Netherlands War of Independence",
-    "start": 1566,
-    "end": 1609,
-    "participants": [["Netherlands"], ["Spain"]],
-    "desc": "Dutch war for independence from Country(Spain)."
-  },
-  {
-    "name": "German Religious Wars",
-    "start": 1546,
-    "end": 1555,
-    "participants": [["Holy Roman Empire"], ["Holy Roman Empire"]],
-    "desc": "Civil War between Protestant princes and the Country(Holy Roman Empire)."
-  },
-  {
-    "name": "German Peasants' War",
-    "start": 1524,
-    "end": 1525,
-    "participants": [["Holy Roman Empire"], ["Holy Roman Empire"]],
-    "desc": "Popular Protestant German peasant uprising."
-  },
-  {
-    "name": "Swiss Religious Wars",
-    "start": 1520,
-    "end": 1531,
-    "participants": [["Switzerland"], ["Switzerland"]],
-    "desc": "Civil War between Protestant and Catholic cantons."
   }
 ]

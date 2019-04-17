@@ -6,14 +6,15 @@ const { sources } = require('./src/data/sources');
 exports.createPages = ({ actions }) => {
     const { createPage } = actions;
 
-    sources.forEach(({ data, pathname, component, previewComponent }) => {
+    sources.forEach(({ data, pathname, component, previewComponent, numShown }) => {
         createPage({
             path: pathname,
             component: resolve('src/components/LinkSearch.js'),
             context: {
                 data,
                 pathname,
-                previewComponent
+                previewComponent,
+                numShown
             }
         });
 

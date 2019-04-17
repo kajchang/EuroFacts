@@ -7,6 +7,8 @@ import TextParser from './TextParser';
 const WarPage = ({ pageContext }) => {
     const { name, start, end, participants, desc } = pageContext;
 
+    let elIdx = 0;
+
     return (
         <Layout>
             <Card style={ { maxWidth: 400 } }>
@@ -18,14 +20,14 @@ const WarPage = ({ pageContext }) => {
                     <Row>
                         {
                             participants
-                                .map(group => <Col>
+                                .map(group => <Col key={ elIdx++ }>
                                     {
-                                        group.map((participant, idx) => <span style={ { display: 'block', paddingBottom: 5 } }>
-                                            <CountryPreview key={ idx } data={ { name: participant } } size='small'/>
+                                        group.map((participant, idx) => <span key={ idx } style={ { display: 'block', paddingBottom: 5 } }>
+                                            <CountryPreview data={ { name: participant } } size='small'/>
                                         </span>)
                                     }
                                 </Col>)
-                                .reduce((prev, cur) => [prev, <Col className='col-md-auto'>
+                                .reduce((prev, cur) => [prev, <Col key={ elIdx++ } className='col-md-auto'>
                                     <div style={ { width: 1, height: '100%', borderLeft: '1px solid', margin: 'auto' } }/>
                                 </Col>, cur])
                         }

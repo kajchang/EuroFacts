@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { navigateTo } from 'gatsby';
 import Flag from './Flag';
 import TextParser from './TextParser';
 
@@ -54,9 +54,9 @@ const WarPreview = ({ data, size }) => {
     }
 
     return (
-        <Link to={ join('/', 'wars', slugify(name, { lower: true })) } title={ name }>
+        <div onClick={ () => navigateTo(join('/', 'wars', slugify(name, { lower: true }))) } title={ name } style={ { display: 'inline', cursor: 'pointer' } }>
             { Preview }
-        </Link>
+        </div>
     );
 }
 

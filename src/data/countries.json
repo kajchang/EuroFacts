@@ -1,14 +1,14 @@
 [
   {"name": "Austria"},
-  {"name": "Russia"},
-  {"name": "France"},
-  {"name": "Prussia"},
-  {"name": "Great Britain"},
-  {"name": "Netherlands"},
-  {"name": "Spain"},
-  {"name": "Holy Roman Empire"},
   {"name": "Bohemia"},
   {"name": "Denmark"},
+  {"name": "France"},
+  {"name": "Great Britain"},
+  {"name": "Holy Roman Empire"},
+  {"name": "Netherlands"},
+  {"name": "Prussia"},
+  {"name": "Russia"},
+  {"name": "Spain"},
   {"name": "Sweden"},
   {"name": "Switzerland"}
 ]

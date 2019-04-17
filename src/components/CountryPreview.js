@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { navigateTo } from 'gatsby';
 import Flag from './Flag';
 
 import slugify from 'slugify';
@@ -33,9 +33,9 @@ const CountryPreview = ({ data, size }) => {
     }
 
     return (
-        <Link to={ join('/', 'countries', slugify(name, { lower: true })) } title={ name }>
+        <div onClick={ () => navigateTo(join('/', 'countries', slugify(name, { lower: true }))) } title={ name } style={ { display: 'inline', cursor: 'pointer' } }>
             { Preview }
-        </Link>
+        </div>
     );
 };
 

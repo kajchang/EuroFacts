@@ -1,42 +1,45 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Input, ListGroup, ListGroupItem } from 'reactstrap';
+import { Input, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import Layout from './Layout';
 
 const LinkSearch = ({ pageContext }) => {
-    const { data, pathname, previewComponent } = pageContext;
+    const { data, pathname, numShown, previewComponent } = pageContext;
+
     const [search, setSearch] = useState('');
+    const [start, setStart] = useState(0);
 
     const PreviewComponent = require(`./${ previewComponent }`).default;
+
+    const results = data
+        .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()));
 
     return (
         <Layout>
             <div>
-                <Input placeholder={ `Search ${ pathname.charAt(1).toUpperCase().concat(pathname.slice(2)) }...` } type='text' value={ search } onChange={ event => setSearch(event.target.value) } style={ { fontSize: 20, marginBottom: 10, padding: 20 } }/>
+                <Input placeholder={ `Search ${ pathname.charAt(1).toUpperCase().concat(pathname.slice(2)) }...` } type='text' value={ search } onChange={ event => {
+                    setSearch(event.target.value);
+                    setStart(0);
+                } } style={ { fontSize: 20, marginBottom: 10, padding: 20 } }/>
                 <ListGroup>
                     {
-                        data
-                            .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))
-                            .slice(0, 10)
+                        results
+                            .slice(start, start + numShown)
                             .map((data , idx) =>
-                                <ListGroupItem key={ idx }>
+                                <ListGroupItem key={ idx } style={ { padding: 10 } }>
                                     <PreviewComponent data={ data } size='medium'/>
                                 </ListGroupItem>
                             )
                     }
                 </ListGroup>
+                <Button onClick={ () => setStart(start - numShown) } style={ { marginLeft: 25, marginTop: 15 } } disabled={ start - numShown < 0 }>
+                    Previous Page
+                </Button>
+                <Button onClick={ () => setStart(start + numShown) } style={ { float: 'right', marginRight: 25, marginTop: 15 } } disabled={ start + numShown > results.length }>
+                    Next Page
+                </Button>
             </div>
         </Layout>
     );
-}
-
-LinkSearch.propTypes = {
-    pageContext: PropTypes.shape({
-        data: PropTypes.arrayOf(PropTypes.shape({
-            name: PropTypes.string.isRequired,
-        })),
-        pathname: PropTypes.string.isRequired
-    })
 }
 
 export default LinkSearch;

@@ -23,27 +23,13 @@ function dynamicSort(property) {
 }
 
 fs.writeFileSync('src/data/wars.json', stringify(
-    JSON.parse(fs.readFileSync('src/data/wars.json', 'utf8')).sort((a, b) => b.start - a.start),
+    JSON.parse(fs.readFileSync('src/data/wars.json', 'utf8')).sort(dynamicSort('name')),
 ));
 
 fs.writeFileSync('src/data/countries.json', stringify(
-    JSON.parse(fs.readFileSync('src/data/wars.json', 'utf8'))
-        .reduce((acc, cur) => {
-            cur.participants
-                .forEach(group => group
-                    .forEach(participant => {
-                        const match = acc.find(({ name }) => name === participant);
-
-                        if (!match) {
-                            acc.push({
-                               name: participant
-                            });
-                        }
-                    })
-                );
-
-            return acc;
-        }, [])
+    fs.readdirSync('src/images/flags').map(flag => ({
+        name: flag.substring(0, flag.length - 4)
+    }))
 ));
 
 fs.readdirSync('src/images/flags').forEach(flag => {

@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { Link, navigateTo } from 'gatsby';
 import { Card, CardTitle, CardBody, Button } from 'reactstrap';
 
 import { isMobile } from '../utils'
 
 const LinkDisplay = ({ data, numShown, pathname, previewComponent }) => {
-    const [shown, setShown] = useState(numShown || 5);
-
     const PreviewComponent = require(`./${ previewComponent }`).default;
 
     return (
@@ -19,13 +17,13 @@ const LinkDisplay = ({ data, numShown, pathname, previewComponent }) => {
                     </Link>
                 </CardTitle>
                 {
-                    data.slice(0, shown).map((data, idx) => (
-                        <PreviewComponent key={idx} data={data} size='small'/>
+                    data.slice(0, numShown).map((data, idx) => (
+                        <PreviewComponent key={ idx } data={ data } size='small'/>
                     ))
                 }
-                {
-                    shown < data.length ? <Button size='sm' onClick={ () => setShown(shown + 5) } style={ { marginTop: 10 } } >See More</Button> : null
-                }
+                <Button size='sm' onClick={ () => navigateTo(pathname) } style={ { marginTop: 10 } } title={ pathname.charAt(1).toUpperCase().concat(pathname.slice(2)) }>
+                    See More
+                </Button>
             </CardBody>
         </Card>
     );

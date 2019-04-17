@@ -14,14 +14,14 @@ const CountryPage = ({ pageContext }) => {
                 <CardBody>
                     <CardTitle>
                         <h3>{ name }</h3>
+                        <h4>Wars</h4>
                     </CardTitle>
                     <CardText>
-                        <h4>Wars</h4>
                         {
                             getDataSource('War')
                                 .data
                                 .filter(({ participants }) => participants.some(group => group.includes(name)))
-                                .map(war => <WarPreview data={ war } size='small'/>
+                                .map((war, idx) => <WarPreview key={ idx } data={ war } size='small'/>
                             )
                         }
                     </CardText>

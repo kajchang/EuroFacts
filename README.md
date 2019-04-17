@@ -17,20 +17,22 @@ The wiki is built from `.json` files located in `src/data`.
 The usage of the data sources is defined in `src/data/sources.js`:
 
 ```js
-const DataSource = (data, resourceName, pathname) => {
+const DataSource = (data, resourceName, pathname, numShown=5) => {
     return Object.freeze({
         data,
         resourceName,
         pathname,
         component: `${ resourceName }Page.js`,
-        previewComponent: `${ resourceName }Preview.js`
+        previewComponent: `${ resourceName }Preview.js`,
+        numShown
     });
 }
 
 const dataSources = [
     DataSource(require('./wars.json'), 'War', '/wars'),
-    DataSource(require('./countries.json'), 'Country', '/countries')
+    DataSource(require('./countries.json'), 'Country', '/countries', 10)
 ];
+
 ```
 
 `data` is the raw json data.
@@ -40,6 +42,8 @@ const dataSources = [
 `pathname` is the path under which the pages are created.
 
 `component` and `previewComponent` are derived from `resourceName` and map to the corresponding components for the pages.
+
+`numShown` is the number of the element shown on the index page.
 
 #### Helper Files
 

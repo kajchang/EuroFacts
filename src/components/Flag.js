@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { navigateTo } from 'gatsby';
 
 import { join } from 'path';
 import slugify from 'slugify';
 
 const Flag = ({ countryName }) => (
-    <Link to={ join('/', 'countries', slugify(countryName, { lower: true })) }>
-        <img src={ require(`../images/flags/${ countryName }.png`) } alt={ countryName } title={ countryName } className='spaced-icon'/>
-    </Link>
+    <img
+        src={ require(`../images/flags/${ countryName }.png`) }
+        alt={ countryName }
+        title={ countryName }
+        onClick={ () => navigateTo(join('/', 'countries', slugify(countryName, { lower: true }))) }
+        className='spaced-icon'
+    />
 );
 
 Flag.propTypes = {
