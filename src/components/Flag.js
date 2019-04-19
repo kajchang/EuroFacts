@@ -5,7 +5,7 @@ import { navigateTo } from 'gatsby';
 import { join } from 'path';
 import slugify from 'slugify';
 
-const Flag = ({ countryName, size }) => {
+const Flag = ({ countryName, size, style }) => {
     let height;
 
     switch (size) {
@@ -27,6 +27,7 @@ const Flag = ({ countryName, size }) => {
             title={ countryName }
             height={ height }
             onClick={ () => navigateTo(join('/', 'countries', slugify(countryName, { lower: true }))) }
+            style={ style }
             className='spaced-icon'
         />
     );
@@ -34,7 +35,8 @@ const Flag = ({ countryName, size }) => {
 
 Flag.propTypes = {
     countryName: PropTypes.string.isRequired,
-    size: PropTypes.string.isRequired
+    size: PropTypes.string.isRequired,
+    style: PropTypes.object.isRequired
 }
 
 export default Flag;

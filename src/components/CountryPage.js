@@ -14,7 +14,7 @@ const CountryPage = ({ pageContext }) => {
             <Card style={ { maxWidth: 400 } }>
                 <CardBody>
                     <CardTitle>
-                        <Flag countryName={ name } size='medium'/><h3 style={ { display: 'inline', marginBottom: 0 } }>{ name }</h3>
+                        <Flag countryName={ name } size='medium' style={ { marginBottom: '.5rem' } }/><h3 style={ { display: 'inline' } }>{ name }</h3>
                         <h4>Wars</h4>
                     </CardTitle>
                     <CardText>
