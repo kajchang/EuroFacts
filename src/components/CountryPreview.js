@@ -14,17 +14,17 @@ const CountryPreview = ({ data, size }) => {
     switch (size) {
         case 'inline':
             Preview = <span>
-                <Flag countryName={ name }/> { name }
+                <Flag countryName={ name } size='small'/> { name }
             </span>;
             break;
         case 'small':
             Preview = <span style={ { display: 'block' } }>
-                <Flag countryName={ name }/> { name }
+                <Flag countryName={ name } size='small'/> { name }
             </span>;
             break;
         case 'medium':
             Preview = <span style={ { display: 'block' } }>
-                <Flag countryName={ name }/> { name }
+                <Flag countryName={ name } size='small'/> { name }
             </span>;
             break;
         default:

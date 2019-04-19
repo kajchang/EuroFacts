@@ -27,7 +27,7 @@ const WarPreview = ({ data, size }) => {
                 {
                     participants
                         .map(group => group.map((participant, idx) =>
-                            <Flag key={ idx } countryName={ participant }/>
+                            <Flag key={ idx } countryName={ participant } size='small'/>
                         ))
                         .reduce((prev, curr) => [prev, <img key={ dividerIdx++ } src={ require(`../images/icons/CrossedSwords.png`) } alt='CrossedSwords' className='spaced-icon'/>, curr])
                 }

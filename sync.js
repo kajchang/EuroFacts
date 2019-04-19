@@ -36,7 +36,7 @@ fs.readdirSync('src/images/flags').forEach(flag => {
     const buffer = fs.readFileSync(path.join('src/images/flags', flag));
     fs.unlinkSync(path.join('src/images/flags', flag));
     sharp(buffer)
-        .resize(25, 15)
+        .resize({ height: 100 })
         .png()
         .toFile(path.join('src/images/flags', flag.replace(/\..+/, '.png')), (err, info) => {});
 });

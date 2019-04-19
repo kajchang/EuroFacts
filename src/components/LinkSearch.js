@@ -24,7 +24,7 @@ const LinkSearch = ({ pageContext }) => {
                     {
                         results
                             .slice(start, start + numShown)
-                            .map((data , idx) =>
+                            .map((data, idx) =>
                                 <ListGroupItem key={ idx } style={ { padding: 10 } }>
                                     <PreviewComponent data={ data } size='medium'/>
                                 </ListGroupItem>
