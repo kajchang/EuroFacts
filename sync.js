@@ -49,3 +49,4 @@ fs.readdirSync('src/images/icons').forEach(icon => {
         .png()
         .toFile(path.join('src/images/icons', icon.replace(/\..+/, '.png')), (err, info) => {});
 });
+
